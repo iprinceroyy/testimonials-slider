@@ -1,0 +1,24 @@
+/* ==============
+    Colors      
+=============== */
+
+
+/*  Primary  */
+
+$dark-blue: hsl(240, 38%, 20%);
+$grayish-blue: hsl(240, 18%, 77%);
+
+/* =============
+    Typography  
+============== */
+
+
+/*  Body Copy  */
+
+$font-size: 2rem;
+
+/*  Font  */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+$font-family: "Inter",
+sans-serif;
