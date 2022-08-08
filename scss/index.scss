@@ -22,3 +22,51 @@ $font-size: 2rem;
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
 $font-family: "Inter",
 sans-serif;
+$fw-300: 300;
+$fw-500: 500;
+$fw-700: 700;
+
+/*****     Main     *****/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    place-items: center center;
+    align-items: center;
+    font-family: $font-family;
+    font-size: 1rem;
+    font-weight: $fw-300;
+    padding: 2rem;
+    background-image: url("../assets/images/pattern-curve.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+}
+
+img {
+    width: 50%;
+}
+
+.testimonial-slider {
+    height: 50rem;
+    width: 242px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    place-items: center start;
+    transition: transform 1s;
+}
+
+.slide>img {
+    width: 100%;
+    object-fit: cover;
+}
