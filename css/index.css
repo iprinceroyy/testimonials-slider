@@ -56,8 +56,11 @@
 .slide img {
   width: 78%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   box-shadow: 0 1rem 3.5rem -0.7rem #babacf;
+}
+.slide .testimonial-text {
+  font-size: 1.25rem;
 }
 
 .btns {
@@ -70,7 +73,7 @@
   z-index: 3;
   /* For button radius */
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 1.25rem;
 }
 .btns .slider__btn {
   position: relative;
