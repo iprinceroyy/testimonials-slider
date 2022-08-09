@@ -49,6 +49,7 @@ $fw-700: 700;
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .slide {
@@ -80,7 +81,15 @@ $fw-700: 700;
     }
     .testimonial-text {
         font-size: 1.25rem;
+        font-weight: $fw-500;
+        text-align: center;
+        color: rgba($dark-blue, 0.9);
+        line-height: 1.3;
     }
+}
+
+.slide-2 {
+    display: none;
 }
 
 .btns {
