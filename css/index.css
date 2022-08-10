@@ -12,7 +12,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  place-items: center center;
+  align-items: center;
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 300;
@@ -24,12 +24,17 @@
   background-size: 19rem;
   background-position: left bottom;
 }
+@media (min-width: 992px) {
+  .container {
+    padding-top: 3rem;
+    padding-left: 0;
+    flex-direction: row;
+  }
+}
 
 .testimonial {
   height: 45rem;
   width: 100%;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 .testimonial__slider {
@@ -37,12 +42,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-basis: 50%;
   height: 50rem;
   background-image: url("../assets/images/pattern-bg.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: left top 1vh;
+}
+@media (min-width: 992px) {
+  .testimonial__slider {
+    background-position: right top;
+    background-size: 50%;
+    height: 100vh;
+    flex-direction: row-reverse;
+  }
 }
 
 .slide {
@@ -54,12 +66,23 @@
   place-items: center start;
   transition: transform 1s;
 }
+@media (min-width: 992px) {
+  .slide {
+    padding-top: 2.8rem;
+    right: 3rem;
+  }
+}
 .slide img {
   position: relative;
   width: calc(100% - 4.4rem);
   object-fit: cover;
   border-radius: 0.625rem;
   box-shadow: 0 1rem 1.5rem -0.7rem #babacf;
+}
+@media (min-width: 992px) {
+  .slide img {
+    width: 41%;
+  }
 }
 @media (min-width: 992px) {
   .slide {
@@ -81,16 +104,32 @@
   background-size: 4em;
   background-position: center top;
 }
+@media (min-width: 992px) {
+  .slide--text {
+    font-size: 2rem;
+    text-align: start;
+    padding-right: 12rem;
+    position: relative;
+    left: 13.5rem;
+  }
+}
 
 .slide__author {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  font-size: 1rem;
+}
+@media (min-width: 992px) {
+  .slide__author {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
 }
 .slide__author--name {
   text-align: center;
-  font-size: inherit;
   color: #202046;
   font-weight: 700;
 }
@@ -106,15 +145,21 @@
   display: flex;
   flex-direction: row;
   justify-content: stretch;
-  z-index: 3;
+  z-index: 10;
   /* For button radius */
   overflow: hidden;
   border-radius: 1.25rem;
 }
+@media (min-width: 992px) {
+  .slider__btns {
+    top: 32rem;
+    right: 25rem;
+  }
+}
 .slider__btns .slider__btn {
   position: relative;
   border: none;
-  padding: 0.7em 1em;
+  padding: 0.7rem 1rem;
   background: white;
 }
 

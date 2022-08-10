@@ -31,7 +31,7 @@ $fw-700: 700;
 .container {
     display: flex;
     flex-direction: column;
-    place-items: center center;
+    align-items: center;
     font-family: $font-family;
     font-size: 1rem;
     font-weight: $fw-300;
@@ -44,26 +44,33 @@ $fw-700: 700;
     background-repeat: no-repeat;
     background-size: 19rem;
     background-position: left bottom;
+    @media (min-width: 992px) {
+        padding-top: 3rem;
+        padding-left: 0;
+        flex-direction: row;
+    }
 }
 
 .testimonial {
     height: 45rem;
-    //height: 80vh;
     width: 100%;
-    display: flex;
-    flex-direction: column;
     overflow: hidden;
     &__slider {
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
-        flex-basis: 50%;
         height: 50rem;
         background-image: url('../assets/images/pattern-bg.svg');
         background-repeat: no-repeat;
         background-size: contain;
         background-position: left top 1vh;
+        @media (min-width: 992px) {
+            background-position: right top;
+            background-size: 50%;
+            height: 100vh;
+            flex-direction: row-reverse;
+        }
     }
 }
 
@@ -75,12 +82,20 @@ $fw-700: 700;
     padding-top: min(5.2vh, 2.4rem);
     place-items: center start;
     transition: transform 1s;
+    @media (min-width: 992px) {
+        padding-top: 2.8rem;
+        right: 3rem;
+    }
     img {
         position: relative;
         width: calc(100% + -4.4rem);
         object-fit: cover;
         border-radius: 0.625rem;
         box-shadow: 0 1rem 1.5rem -0.7rem $grayish-blue;
+        @media (min-width: 992px) {
+            width: calc(100% + -59%);
+            //max-width: calc(100% + -43rem);
+        }
     }
     @media (min-width: 992px) {
         flex-direction: row-reverse;
@@ -100,6 +115,13 @@ $fw-700: 700;
     background-repeat: no-repeat;
     background-size: 4em;
     background-position: center top;
+    @media (min-width: 992px) {
+        font-size: 2rem;
+        text-align: start;
+        padding-right: 12rem;
+        position: relative;
+        left: 13.5rem;
+    }
 }
 
 .slide__author {
@@ -107,9 +129,14 @@ $fw-700: 700;
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    font-size: 1rem;
+    @media (min-width: 992px) {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 0.5rem;
+    }
     &--name {
         text-align: center;
-        font-size: inherit;
         color: $dark-blue;
         font-weight: $fw-700;
     }
@@ -126,14 +153,18 @@ $fw-700: 700;
     display: flex;
     flex-direction: row;
     justify-content: stretch;
-    z-index: 3;
+    z-index: 10;
     /* For button radius */
     overflow: hidden;
     border-radius: 1.25rem;
+    @media (min-width: 992px) {
+        top: 32rem;
+        right: 25rem;
+    }
     .slider__btn {
         position: relative;
         border: none;
-        padding: 0.7em 1em;
+        padding: 0.7rem 1rem;
         background: white;
     }
 }
