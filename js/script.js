@@ -6,6 +6,7 @@ let currentSlide = 0;
 const maxSlide = slides.length;
 
 const gotToSlide = currSlide => {
+    // Add transform property on each slide
     slides.forEach(
         (slide, i) =>
         (slide.style.transform = `translateX(${100 * (i - currSlide)}%)`)
@@ -14,16 +15,16 @@ const gotToSlide = currSlide => {
 
 // Next Slide
 const nextSlide = () => {
-    if (currentSlide === maxSlide - 1) currentSlide = 0;
-    else currentSlide++;
+    // If curr slide is at max then make first slide as curr slide
+    currentSlide === maxSlide - 1 ? (currentSlide = 0) : currentSlide++;
 
     gotToSlide(currentSlide);
 };
 
 // Prev Slide
 const prevSlide = () => {
-    if (currentSlide === 0) currentSlide = maxSlide - 1;
-    else currentSlide--;
+    // If curr slide is at 0, then make last slide as curr slide
+    currentSlide === 0 ? (currentSlide = maxSlide - 1) : currentSlide--;
 
     gotToSlide(currentSlide);
 };
