@@ -72,8 +72,8 @@ $fw-700: 700;
         background-size: contain;
         background-position: left top 1vh;
         @media (min-width: 992px) {
-            background-position: right top;
-            background-size: 50%;
+            background-position: right center;
+            background-size: min(60vw, 47%);
             height: 100vh;
             flex-direction: row-reverse;
         }
@@ -81,34 +81,33 @@ $fw-700: 700;
 }
 
 .slide {
-    position: absolute;
+    // position: absolute;
     top: 0;
     display: flex;
     flex-direction: column;
     padding-top: min(5.2vh, 2.4rem);
-    place-items: center start;
+    align-items: center;
     transition: transform 1s;
     @media (min-width: 992px) {
-        //padding-top: 2.8rem;
-        padding-top: min(6vh, 10ch, 2.4rem);
-        right: 3rem;
+        padding-top: 7rem;
+        right: 5.5rem;
+        //align-items: center;
+        flex-direction: row-reverse;
     }
     img {
-        position: relative;
+        //position: relative;
         //width: calc(100% + -4.4rem);
-        width: min(64vw, 34rem);
+        width: min(65vw, 32rem);
         object-fit: cover;
         border-radius: 0.625rem;
         box-shadow: 0 1rem 1.5rem -0.7rem $grayish-blue;
         @media (min-width: 992px) {
-            //width: calc(100% + -59%);
-            //width: min(80vw, 33rem);
             right: max(2vw, 2.8rem);
+            //flex-basis: 40%;
+            width: min(65vw, 24rem);
         }
     }
-    @media (min-width: 992px) {
-        flex-direction: row-reverse;
-    }
+    @media (min-width: 992px) {}
 }
 
 .slide--text {
@@ -131,7 +130,7 @@ $fw-700: 700;
         padding-right: min(10vw, 10%, 12rem);
         position: relative;
         left: min(14vw, 20ch, 13.5rem);
-        flex-basis: 50%;
+        //flex-basis: 50%;
     }
 }
 
