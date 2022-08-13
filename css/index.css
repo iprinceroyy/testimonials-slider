@@ -24,7 +24,15 @@
   background-size: 19rem;
   background-position: left bottom;
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
+  .container {
+    padding-top: min(1vh, 3rem);
+    padding-left: 0;
+    padding-right: 5rem;
+    flex-direction: row-reverse;
+  }
+}
+@media (min-width: 1201px) {
   .container {
     padding-top: min(1vh, 3rem);
     padding-left: 0;
@@ -50,10 +58,18 @@
   background-size: contain;
   background-position: left top 1vh;
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
   .testimonial__slider {
     background-position: right center;
-    background-size: 47%;
+    background-size: min(60vw, 50%);
+    height: 100vh;
+    flex-direction: row-reverse;
+  }
+}
+@media (min-width: 1201px) {
+  .testimonial__slider {
+    background-position: right center;
+    background-size: min(60vw, 47%);
     height: 100vh;
     flex-direction: row-reverse;
   }
@@ -68,31 +84,45 @@
   align-items: center;
   transition: transform 1s;
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
   .slide {
-    padding-top: 7rem;
+    padding-top: 7.5rem;
+    right: 5.5rem;
+    flex-direction: row-reverse;
+  }
+}
+@media (min-width: 1201px) {
+  .slide {
+    padding-top: 7.5rem;
     right: 5.5rem;
     flex-direction: row-reverse;
   }
 }
 .slide img {
-  width: min(65vw, 32rem);
+  position: relative;
+  width: min(65vw, 33rem);
   object-fit: cover;
   border-radius: 0.625rem;
   box-shadow: 0 1rem 1.5rem -0.7rem #babacf;
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
   .slide img {
-    right: max(2vw, 2.8rem);
+    right: -2rem;
+    width: 23rem;
   }
 }
+@media (min-width: 1201px) {
+  .slide img {
+    right: min(-1vw, -1rem);
+  }
+}
+
 .slide--text {
-  font-size: clamp(1rem, 0.414rem + 2.5vw, 2rem);
+  font-size: clamp(1.3rem, 1.26vw + 1rem, 1.94rem);
   font-weight: 500;
   text-align: center;
   color: rgba(32, 32, 70, 0.7);
-  line-height: 1.4;
-  letter-spacing: 1px;
+  line-height: 1.25;
   margin-top: 3rem;
   padding-top: 2rem;
   background-image: url("../assets/images/pattern-quotes.svg");
@@ -100,12 +130,24 @@
   background-size: 4em;
   background-position: center top;
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
   .slide--text {
+    background-position: left 6vw top -1.5vh;
+    background-size: min(6vw, 3.5em);
     text-align: start;
-    padding-right: min(10vw, 10%, 12rem);
+    padding-right: min(3.5vw, 10%, 4rem);
     position: relative;
-    left: min(14vw, 20ch, 13.5rem);
+    left: min(10vw, 20ch, 10rem);
+  }
+}
+@media (min-width: 1201px) {
+  .slide--text {
+    background-position: left 6.3vw top -2vh;
+    background-size: min(6vw, 3.5em);
+    text-align: start;
+    padding-right: min(11vw, 20%, 10rem);
+    position: relative;
+    left: min(18vw, 20ch, 16rem);
   }
 }
 
@@ -116,7 +158,14 @@
   gap: 0.3rem;
   font-size: 1rem;
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
+  .slide__author {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+}
+@media (min-width: 1201px) {
   .slide__author {
     flex-direction: row;
     align-items: baseline;
@@ -145,7 +194,13 @@
   overflow: hidden;
   border-radius: 1.25rem;
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
+  .slider__btns {
+    top: 32rem;
+    right: 25rem;
+  }
+}
+@media (min-width: 1201px) {
   .slider__btns {
     top: 32rem;
     right: 25rem;
