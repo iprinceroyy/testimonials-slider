@@ -158,11 +158,11 @@ $y-val) {
         align-items: baseline;
         gap: 0.5rem;
         margin-top: 0;
-        padding-left: 4.5rem;
+        padding-left: min(7vw, 20ch, 10rem);
     }
     @media(min-width:1201px) {
         margin-top: -5rem;
-        padding-left: 11rem;
+        padding-left: min(15vw, 20ch, 14rem);
     }
     &--name {
         text-align: center;
