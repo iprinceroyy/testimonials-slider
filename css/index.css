@@ -16,28 +16,18 @@
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 300;
-  padding-top: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-block-start: 1rem;
+  padding-inline: 2rem;
   background-image: url("../assets/images/pattern-curve.svg");
   background-repeat: no-repeat;
   background-size: 19rem;
-  background-position: left bottom;
-}
-@media (min-width: 992px) and (max-width: 1200px) {
-  .container {
-    padding-top: min(1vh, 3rem);
-    padding-left: 0;
-    padding-right: 5rem;
-    flex-direction: row-reverse;
-  }
+  background-position-x: left;
+  background-position-y: bottom;
 }
 @media (min-width: 1201px) {
   .container {
-    padding-top: min(1vh, 3rem);
-    padding-left: 0;
-    padding-right: 5rem;
-    flex-direction: row-reverse;
+    padding-block-start: min(1vh, 3rem);
+    padding-inline: 0 5rem;
   }
 }
 
@@ -51,27 +41,22 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background-image: url("../assets/images/pattern-bg.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: left top 1vh;
+  background-position-x: left;
+  background-position-y: top 1vh;
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) {
   .testimonial__slider {
     background-position: right center;
     background-size: min(60vw, 50%);
     height: 100vh;
-    flex-direction: row-reverse;
   }
 }
 @media (min-width: 1201px) {
   .testimonial__slider {
-    background-position: right center;
     background-size: min(60vw, 47%);
-    height: 100vh;
-    flex-direction: row-reverse;
   }
 }
 
@@ -80,11 +65,11 @@
   top: 0;
   display: flex;
   flex-direction: column;
-  padding-top: min(5.2vh, 2.4rem);
   align-items: center;
+  padding-top: min(5.2vh, 2.4rem);
   transition: transform 1s;
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) {
   .slide {
     padding-top: 7.5rem;
     right: 5.5rem;
@@ -94,8 +79,6 @@
 @media (min-width: 1201px) {
   .slide {
     padding-top: 7.5rem;
-    right: 5.5rem;
-    flex-direction: row-reverse;
   }
 }
 .slide img {
@@ -128,9 +111,10 @@
   background-image: url("../assets/images/pattern-quotes.svg");
   background-repeat: no-repeat;
   background-size: 4em;
-  background-position: center top;
+  background-position-x: center;
+  background-position-y: top;
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) {
   .slide--text {
     background-position: left 6vw top -1.5vh;
     background-size: min(6vw, 3.5em);
@@ -143,10 +127,7 @@
 @media (min-width: 1201px) {
   .slide--text {
     background-position: left 6.3vw top -2vh;
-    background-size: min(6vw, 3.5em);
-    text-align: start;
     padding-right: min(11vw, 20%, 10rem);
-    position: relative;
     left: min(18vw, 20ch, 16rem);
   }
 }
@@ -155,17 +136,11 @@
   margin-top: clamp(1.07rem, 1.03vw + 0.82rem, 1.6rem);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.3rem;
   font-size: 1rem;
 }
-@media (min-width: 992px) and (max-width: 1200px) {
-  .slide__author {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 0.5rem;
-  }
-}
-@media (min-width: 1201px) {
+@media (min-width: 992px) {
   .slide__author {
     flex-direction: row;
     align-items: baseline;
@@ -185,7 +160,8 @@
 
 .slider__btns {
   position: absolute;
-  top: 15rem;
+  /* For mobile to iPad */
+  top: clamp(18rem, 73.51vw + 0.77rem, 35rem);
   display: flex;
   flex-direction: row;
   justify-content: stretch;
@@ -196,21 +172,22 @@
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .slider__btns {
-    top: 32rem;
+    top: 29rem;
     right: 25rem;
   }
 }
 @media (min-width: 1201px) {
   .slider__btns {
-    top: 32rem;
-    right: 25rem;
+    top: 39rem;
+    right: 34rem;
   }
 }
 .slider__btns .slider__btn {
   position: relative;
   border: none;
-  padding: 0.7rem 1rem;
-  background: white;
+  padding-block: 0.7rem;
+  padding-inline: 1rem;
+  background-color: white;
 }
 
 /*# sourceMappingURL=index.css.map */

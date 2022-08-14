@@ -28,66 +28,56 @@ $fw-700: 700;
 
 /*****     Main     *****/
 
-.container {
+@mixin display() {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@mixin background-set($bg-size,
+$x-val,
+$y-val) {
+    background-repeat: no-repeat;
+    background-size: $bg-size;
+    background-position-x: $x-val;
+    background-position-y: $y-val;
+}
+
+.container {
+    @include display();
     font-family: $font-family;
     font-size: 1rem;
     font-weight: $fw-300;
-    padding: {
-        top: 1rem;
-        left: 2rem;
-        right: 2rem;
-    }
+    padding-block-start: 1rem;
+    padding-inline: 2rem;
     background-image: url('../assets/images/pattern-curve.svg');
-    background-repeat: no-repeat;
-    background-size: 19rem;
-    background-position: left bottom;
-    @media (min-width: 992px) and (max-width: 1200px) {
-        padding-top: min(1vh, 3rem);
-        padding-left: 0;
-        padding-right: 5rem;
-        flex-direction: row-reverse;
-    }
+    @include background-set(19rem,
+    left,
+    bottom);
     @media (min-width: 1201px) {
-        padding-top: min(1vh, 3rem);
-        padding-left: 0;
-        padding-right: 5rem;
-        flex-direction: row-reverse;
+        padding-block-start: min(1vh, 3rem);
+        padding-inline: 0 5rem;
     }
 }
 
 .testimonial {
-    //height: 45rem;
     width: 100%;
     overflow: hidden;
-    // display: flex;
-    // flex-direction: column;
     &__slider {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        //height: 50rem;
+        @include display();
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
         background-image: url('../assets/images/pattern-bg.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: left top 1vh;
-        @media (min-width: 992px) and (max-width: 1200px) {
+        @include background-set(contain,
+        left,
+        top 1vh);
+        @media (min-width: 992px) {
             background-position: right center;
             background-size: min(60vw, 50%);
             height: 100vh;
-            flex-direction: row-reverse;
         }
         @media (min-width: 1201px) {
-            background-position: right center;
             background-size: min(60vw, 47%);
-            height: 100vh;
-            flex-direction: row-reverse;
         }
     }
 }
@@ -95,20 +85,16 @@ $fw-700: 700;
 .slide {
     position: absolute;
     top: 0;
-    display: flex;
-    flex-direction: column;
+    @include display();
     padding-top: min(5.2vh, 2.4rem);
-    align-items: center;
     transition: transform 1s;
-    @media (min-width: 992px) and (max-width: 1200px) {
+    @media (min-width: 992px) {
         padding-top: 7.5rem;
         right: 5.5rem;
         flex-direction: row-reverse;
     }
     @media (min-width: 1201px) {
         padding-top: 7.5rem;
-        right: 5.5rem;
-        flex-direction: row-reverse;
     }
     img {
         position: relative;
@@ -127,10 +113,7 @@ $fw-700: 700;
 }
 
 .slide--text {
-    //font-size: clamp(1rem, 0.91vw + 0.77rem, 1.5rem);
-    //font-size: clamp(1rem, 1.29vw + 0.68rem, 1.5rem);
     font-size: clamp(1.3rem, 1.26vw + 1rem, 1.94rem);
-    //font-size: clamp(1rem, 0.414rem + 2.5vw, 2rem);
     font-weight: $fw-500;
     text-align: center;
     color: rgba($dark-blue, 0.7);
@@ -138,10 +121,10 @@ $fw-700: 700;
     margin-top: 3rem;
     padding-top: 2rem;
     background-image: url('../assets/images/pattern-quotes.svg');
-    background-repeat: no-repeat;
-    background-size: 4em;
-    background-position: center top;
-    @media (min-width: 992px) and (max-width: 1200px) {
+    @include background-set(4em,
+    center,
+    top);
+    @media (min-width: 992px) {
         background-position: left 6vw top -1.5vh;
         background-size: min(6vw, 3.5em);
         text-align: start;
@@ -151,26 +134,17 @@ $fw-700: 700;
     }
     @media (min-width: 1201px) {
         background-position: left 6.3vw top -2vh;
-        background-size: min(6vw, 3.5em);
-        text-align: start;
         padding-right: min(11vw, 20%, 10rem);
-        position: relative;
         left: min(18vw, 20ch, 16rem);
     }
 }
 
 .slide__author {
     margin-top: clamp(1.07rem, 1.03vw + 0.82rem, 1.6rem);
-    display: flex;
-    flex-direction: column;
+    @include display();
     gap: 0.3rem;
     font-size: 1rem;
-    @media (min-width: 992px) and (max-width: 1200px) {
-        flex-direction: row;
-        align-items: baseline;
-        gap: 0.5rem;
-    }
-    @media (min-width: 1201px) {
+    @media (min-width: 992px) {
         flex-direction: row;
         align-items: baseline;
         gap: 0.5rem;
@@ -189,7 +163,8 @@ $fw-700: 700;
 
 .slider__btns {
     position: absolute;
-    top: 15rem;
+    /* For mobile to iPad */
+    top: clamp(18rem, 73.51vw + 0.77rem, 35rem);
     display: flex;
     flex-direction: row;
     justify-content: stretch;
@@ -198,17 +173,18 @@ $fw-700: 700;
     overflow: hidden;
     border-radius: 1.25rem;
     @media (min-width: 992px) and (max-width: 1200px) {
-        top: 32rem;
+        top: 29rem;
         right: 25rem;
     }
     @media (min-width: 1201px) {
-        top: 32rem;
-        right: 25rem;
+        top: 39rem;
+        right: 34rem;
     }
     .slider__btn {
         position: relative;
         border: none;
-        padding: 0.7rem 1rem;
-        background: white;
+        padding-block: 0.7rem;
+        padding-inline: 1rem;
+        background-color: hsl(0, 0%, 100%);
     }
 }
