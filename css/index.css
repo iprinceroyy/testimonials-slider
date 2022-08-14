@@ -161,7 +161,7 @@
 .slider__btns {
   position: absolute;
   /* For mobile to iPad */
-  top: clamp(18rem, 73.51vw + 0.77rem, 35rem);
+  top: clamp(17.5rem, 75.68vw - 0.24rem, 35rem);
   display: flex;
   flex-direction: row;
   justify-content: stretch;
