@@ -93,6 +93,8 @@ $y-val) {
     padding-top: min(5.2vh, 2.4rem);
     transition: transform 1s;
     @media (min-width: 992px) {
+        display: grid;
+        grid-template-columns: repeat(2, auto-fit);
         padding-top: 7.5rem;
         right: 5.5rem;
         flex-direction: row-reverse;
@@ -107,10 +109,12 @@ $y-val) {
         border-radius: 0.625rem;
         box-shadow: 0 2rem 2.2rem -1.3rem $grayish-blue;
         @media (min-width: 992px) and (max-width: 1200px) {
+            grid-area: 1 / 2 / span 1 / span 2;
             right: -2rem;
             width: 23rem;
         }
         @media (min-width: 1201px) {
+            grid-area: 1 / 2 / span 1 / span 2;
             right: min(-1vw, -1rem);
         }
     }
@@ -153,6 +157,12 @@ $y-val) {
         flex-direction: row;
         align-items: baseline;
         gap: 0.5rem;
+        margin-top: 0;
+        padding-left: 4.5rem;
+    }
+    @media(min-width:1201px) {
+        margin-top: -5rem;
+        padding-left: 11rem;
     }
     &--name {
         text-align: center;

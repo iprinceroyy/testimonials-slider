@@ -9,7 +9,7 @@ const gotToSlide = currSlide => {
     // Add transform property on each slide
     slides.forEach(
         (slide, i) =>
-        (slide.style.transform = `translateX(${100 * (i - currSlide)}%)`)
+        (slide.style.transform = `translateX(${105 * (i - currSlide)}%)`)
     );
 };
 
