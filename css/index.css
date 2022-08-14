@@ -86,7 +86,7 @@
   width: min(65vw, 33rem);
   object-fit: cover;
   border-radius: 0.625rem;
-  box-shadow: 0 1rem 1.5rem -0.7rem #babacf;
+  box-shadow: 0 2rem 2.2rem -1.3rem #babacf;
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .slide img {
